@@ -1,3 +1,4 @@
+--v1.0.2a
 -- Event function level up
 local a = CreateFrame("Frame")
 a:RegisterEvent("PLAYER_LEVEL_UP")

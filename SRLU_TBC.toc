@@ -1,0 +1,12 @@
+## Interface: 20503
+## Version: 1.0.2a
+## Title:|cffffffffSkyrim|r Level Up!
+## Author: DonnieDice
+## Notes: Grats!
+
+## X-Category: UI Media, Questing & Leveling, Audio & Video, Miscellaneous
+## X-Website: https://github.com/donniedice/SRLU
+## X-Curse-Project-ID: 594118
+## X-WoWI-ID: 26265
+
+main.lua
