@@ -1,0 +1,11 @@
+v1.0.2d
+
+- Added - CHANGELOG.txt
+
+- Added - Package-as YAML
+
+- Added - Multiple .toc support
+
+- Added - Muted WoW default level up sound
+
+- Added - Multiple version support
