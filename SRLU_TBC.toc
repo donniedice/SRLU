@@ -1,5 +1,5 @@
 ## Interface: 20503
-## Version: 1.0.2d
+## Version: 1.0.3
 ## Title:|cffffffffSkyrim|r Level Up!
 ## Author: DonnieDice
 ## Notes: Grats!

@@ -1,6 +1,6 @@
-v1.0.2d
+v1.0.3
 
-- Added - CHANGELOG.txt
+- Added - CHANGELOG.md
 
 - Added - Package-as YAML
 
