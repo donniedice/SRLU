@@ -1,11 +1,9 @@
-v1.0.3
+v1.0.4
 
-- Added - CHANGELOG.md
+- Added - Download Links in README.md
 
-- Added - Package-as YAML
+- Updated - README.md formatting
 
-- Added - Multiple .toc support
+- Updated - Interface Versions
 
-- Added - Muted WoW default level up sound
-
-- Added - Multiple version support
+- Added - Multiple ProjectID
