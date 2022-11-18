@@ -1,6 +1,6 @@
-## Interface: 100000
-## Version: 1.0.5
-## Title:|cffffffffSkyrim|r Level Up!
+## Interface: 100002
+## Version: 1.0.6
+## Title:|cff1f1d1eSkyrim|r Level Up!
 ## Author: DonnieDice
 ## Notes: Grats!
 
