@@ -1,6 +1,3 @@
-v1.0.7
+v1.0.8
 
-- Updated - README - Removed TUKUI
-- Updated - TOC Formatting
-- Changed - main.lua > Core.lua
-- Added - Notation to Core.lua
+- Updated - TOC for Guardians of the Dream (10.2) [ver.100200]

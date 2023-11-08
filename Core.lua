@@ -1,4 +1,4 @@
--- v1.0.7
+-- v1.0.8
 
 -- Event function for playing a custom sound when the player levels up
 local frame_a = CreateFrame("Frame")
