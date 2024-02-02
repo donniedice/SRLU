@@ -1,8 +1,8 @@
-## Interface: 11404
-## Version: 1.0.8
+## Interface: 30403
+## Version: 1.0.9
 ## Title:|cff1f1d1eSkyrim|r Level Up!
 ## Author: DonnieDice
-## Notes: Grats!
+## Notes: Grats!|n|r   |cff05dffaBy Uivi US-BleedingHollow|r
 
 ## X-Category: UI Media, Questing & Leveling, Audio & Video, Miscellaneous
 ## X-Website: https://github.com/donniedice/SRLU
