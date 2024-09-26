@@ -1,8 +1,10 @@
-## Interface: 11500
-## Version: 1.0.9
+## Interface: 11503
+## Version: 2.0.0
 ## Title:|cff1f1d1eSkyrim|r Level Up!
-## Author: DonnieDice
 ## Notes: Grats!|n|r   |cff05dffaBy Uivi US-BleedingHollow|r
+## Author: DonnieDice
+## Email: donniedice@protonmail.com
+## IconTexture: Interface\AddOns\SRLU\images\icon
 
 ## X-Category: UI Media, Questing & Leveling, Audio & Video, Miscellaneous
 ## X-Website: https://github.com/donniedice/SRLU
@@ -10,4 +12,4 @@
 ## X-Wago-ID: J96EkaGg
 ## X-WoWI-ID: 26265
 
-Core.lua
+data\core.lua

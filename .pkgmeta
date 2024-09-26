@@ -1,3 +1,2 @@
-#v1.0.9
 package-as: SRLU
-manual-changelog: CHANGELOG.md
+manual-changelog: CHANGES.md

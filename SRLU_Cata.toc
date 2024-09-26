@@ -1,0 +1,15 @@
+## Interface: 40400
+## Version: 2.0.0
+## Title:|cff1f1d1eSkyrim|r Level Up!
+## Notes: Grats!|n|r   |cff05dffaBy Uivi US-BleedingHollow|r
+## Author: DonnieDice
+## Email: donniedice@protonmail.com
+## IconTexture: Interface\AddOns\SRLU\images\icon
+
+## X-Category: UI Media, Questing & Leveling, Audio & Video, Miscellaneous
+## X-Website: https://github.com/donniedice/SRLU
+## X-Curse-Project-ID: 594118
+## X-Wago-ID: J96EkaGg
+## X-WoWI-ID: 26265
+
+data\core.lua

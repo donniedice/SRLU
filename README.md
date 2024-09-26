@@ -1,6 +1,6 @@
 [![](https://img.shields.io/static/v1?label=Donate&message=CashApp&color=brightgreen)](https://bit.ly/3fyxxSU)
 
-v1.0.9
+v2.0.0
 ------------------------------
 
 **SRLU | Skyrim Level Up!**
@@ -15,11 +15,11 @@ This is an addon that will play the "LEVEL UP!" chime from Skyrim when you level
 
 ------------------------------
 
-- This addon works in DRAGONFLIGHT!
+- This addon works in The War Within!
 
 - This addon works in CLASSIC WOW!
 
-- This addon works in CLASSIC WotLK!
+- This addon works in CLASSIC CATA!
 
 ------------------------------
 <div align="center">
