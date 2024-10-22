@@ -1,6 +1,5 @@
 [![](https://img.shields.io/static/v1?label=Donate&message=CashApp&color=brightgreen)](https://bit.ly/3fyxxSU)
 
-v2.0.0
 ------------------------------
 
 **SRLU | Skyrim Level Up!**

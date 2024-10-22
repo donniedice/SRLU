@@ -1,3 +1,4 @@
+v2.0.2-------------------------------------------------------------------
 - Added - [changelog.txt] - [data/docs]
 - Added - Missing icon - [images/icon.tga]
 - Fixed - Colors in ##Title and ##Notes - [SRLU.toc, SRLU_Vanilla.toc, SRLU_Cata.toc]
