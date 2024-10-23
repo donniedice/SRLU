@@ -1,6 +1,6 @@
 ## Interface: 40400
-## Version: 2.0.2
-## Title: - |cff1f1d1eS|r|cffffffffkyrim|r |cff1f1d1eL|r|cffffffffevel-|r |cff1f1d1eU|r|cffffffffp!|r - |cff8080ff2.0.2|r 
+## Version: 2.0.3
+## Title: - |cffa0a0a0S|r|cffffffffkyrim|r |cffa0a0a0L|r|cffffffffevel-|r |cffa0a0a0U|r|cffffffffp!|r - |cff8080ff2.0.3|r 
 ## Notes: Play the Final Fantasy level up sound!.|n|r   |cff1f1d1eBy Uivi US-BleedingHollow|r
 ## Author: DonnieDice
 ## Email: donniedice@protonmail.com

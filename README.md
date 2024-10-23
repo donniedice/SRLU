@@ -1,30 +1,60 @@
-[![](https://img.shields.io/static/v1?label=Donate&message=CashApp&color=brightgreen)](https://bit.ly/3fyxxSU)
+# SRLU | Skyrim Level-Up!
 
-------------------------------
+---
 
-**SRLU | Skyrim Level Up!**
+**SRLU | Skyrim Level-Up!** is an addon that plays the iconic "LEVEL UP!" chime from Skyrim when you level up in World of Warcraft.
 
-------------------------------
+---
 
-***SRLU | Skyrim Level Up! Will no longer be receiving updates. Functionality has been merged into [BLU | Better Level Up!](https://www.curseforge.com/wow/addons/blu-better-level-up "This link takes you to the Curseforge.com website, you may download it here and help support the developers."). If you're a fan of my sound addons, [BLU | Better Level Up!](https://www.curseforge.com/wow/addons/blu-better-level-up "This link takes you to the Curseforge.com website, you may download it here and help support the developers.") is available from all addon provider websites. Thank you!***
+## Compatibility
 
-------------------------------
+- **The War Within**
+- **Classic WoW**
+- **Classic Cataclysm**
 
-This is an addon that will play the "LEVEL UP!" chime from Skyrim when you level up in WoW.
+---
 
-------------------------------
+## Installation
 
-- This addon works in The War Within!
+1. **Download** the addon from:
+   - [CurseForge](https://www.curseforge.com/wow/addons/srlu)
+   - [GitHub](https://github.com/donniedice/SRLU)
+   - [Wago.io](https://addons.wago.io/addons/srlu)
+   - [WoWInterface](https://www.wowinterface.com/downloads/info26265-SRLU-SkyrimLevelUp.html)
 
-- This addon works in CLASSIC WOW!
+2. **Extract** to your WoW `Interface/AddOns` directory:
+   - For **The War Within**: `World of Warcraft/_retail_/Interface/AddOns`
+   - For **Classic WoW**: `World of Warcraft/_classic_era_/Interface/AddOns`
+   - For **Classic Cataclysm**: `World of Warcraft/_classic_/Interface/AddOns`
 
-- This addon works in CLASSIC CATA!
+3. **Restart WoW** and enable the addon in the AddOns menu.
 
-------------------------------
-<div align="center">
+---
 
-**SRLU Download Links:**
+## Support the Project
 
-[Curse](https://www.curseforge.com/wow/addons/srlu "This link takes you to the Curseforge.com website, you may download it here and help support the developers.") * [GitHub](https://github.com/donniedice/SRLU "This link takes you to the GitHub.com website, you may download it here.") * [Wago](https://addons.wago.io/addons/srlu "This link takes you to the Wago.io website, you may download it here and help support the developers.") * [WoWInterface](https://www.wowinterface.com/downloads/info26265-SRLU-SkyrimLevelUp.html "This link takes you to the WoWInterface.com website, you may download it here.")
+- **Buy Me a Coffee**: [☕️ Donate](https://www.buymeacoffee.com/donniedice)
+- **Donate via CashApp**: [💸 Donate](https://bit.ly/3fyxxSU)
+- **Star on GitHub**: [⭐️ SRLU | Skyrim Level-Up!](https://github.com/donniedice/SRLU)
+- **Share**: Share it with friends and guildmates!
 
-</div>
+---
+
+## Feedback and Contributions
+
+Your feedback is valuable! If you encounter any issues or have suggestions:
+- **Report Issues**: [GitHub Issues](https://github.com/donniedice/SRLU/issues)
+- **Contribute**: Submit a pull request on [GitHub](https://github.com/donniedice/SRLU).
+- **Contact**: Reach out via [GitHub](https://github.com/donniedice).
+
+---
+
+## License
+
+This project is licensed under the [MIT License](https://github.com/donniedice/SRLU/blob/main/LICENSE).
+
+---
+
+## Disclaimer
+
+**Disclaimer**: This addon is provided "as is" without warranty. Use at your own risk. The author is not responsible for any issues arising from its use.
