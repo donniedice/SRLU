@@ -1,2 +1,1 @@
-- Fixed - Proper brackets on welcome message - [data/core.lua]
-- Fixed - Dark grey in AddOns menu - [SRLU.toc, SRLU_Vanilla.toc, SRLU_Cata.toc]
+- Fixed - No longer uses '## Notes' from FFLU - [SRLU.toc, SRLU_Vanilla.toc, SRLU_Cata.toc]
