@@ -6,7 +6,7 @@ local SRLU = {} -- Create a namespace to avoid global variable pollution
 
 -- Play custom sound on level up
 function SRLU.PlayCustomLevelUpSound()
-    PlaySoundFile("Interface\\Addons\\SRLU\\SRLU.ogg", "Master")
+    PlaySoundFile("Interface\\Addons\\sounds\\SRLU\\SRLU.ogg", "Master")
 end
 
 -- Mute default level up sound
