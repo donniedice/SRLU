@@ -1,6 +1,6 @@
-## Interface: 110005
-## Version: 2.0.5
-## Title: - |cffa0a0a0S|r|cffffffffkyrim|r |cffa0a0a0L|r|cffffffffevel-|r |cffa0a0a0U|r|cffffffffp!|r - |cff8080ff2.0.5|r 
+## Interface: 110007
+## Version: 2.0.6
+## Title: - |cffa0a0a0S|r|cffffffffkyrim|r |cffa0a0a0L|r|cffffffffevel-|r |cffa0a0a0U|r|cffffffffp!|r - |cff8080ff2.0.6|r 
 ## Notes: Play the Skyrim level up sound!.|n|r   |cff1f1d1eBy Uivi US-BleedingHollow|r
 ## Author: DonnieDice
 ## Email: donniedice@protonmail.com

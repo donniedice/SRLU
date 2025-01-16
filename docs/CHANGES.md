@@ -1,3 +1,1 @@
-- Fixed - Sound not playing due to incorrect sound file path
-- Updated - ToC for _classic_era_ - WOW20TH (1.15.5.57716) [ToC.11505]
-- Updated - ToC for _classic_ - Cata Firelands (4.4.1.57564) [ToC.40401]
+- Updated - ToC for _retail_ - [ToC.110007]
