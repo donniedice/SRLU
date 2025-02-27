@@ -1,9 +1,9 @@
-## Interface: 40401
-## Version: 2.0.6
-## Title: - |cffa0a0a0S|r|cffffffffkyrim|r |cffa0a0a0L|r|cffffffffevel-|r |cffa0a0a0U|r|cffffffffp!|r - |cff8080ff2.0.6|r 
-## Notes: Play the Skyrim level up sound!.|n|r   |cff1f1d1eBy Uivi US-BleedingHollow|r
+## Interface: 40402
+## Version: 2.0.7
+## Title: - |cffa0a0a0S|r|cffffffffkyrim|r |cffa0a0a0L|r|cffffffffevel-|r |cffa0a0a0U|r|cffffffffp!|r - |cff8080ff2.0.7|r 
+## Notes: Play the Skyrim level up sound!.|n|r   |cff1f1d1eBy DonnieDice|r
 ## Author: DonnieDice
-## Email: donniedice@protonmail.com
+## Email: joseph@donniedice.com
 ## IconTexture: Interface\AddOns\SRLU\images\icon
 
 ## X-Category: UI Media, Questing & Leveling, Audio & Video, Miscellaneous
