@@ -1,9 +1,9 @@
-## Interface: 110100
-## Version: 2.0.7
+## Interface: 110105
+## Version: 2.0.8
 ## Title: - |cffa0a0a0S|r|cffffffffkyrim|r |cffa0a0a0L|r|cffffffffevel-|r |cffa0a0a0U|r|cffffffffp!|r
 ## Notes: Play the Skyrim level up sound!.|n|r   |cff1f1d1eBy Uivi US-BleedingHollow|r
 ## Author: DonnieDice
-## Email: donniedice@protonmail.com
+## Email: donniedice@cranberriestudios.com
 ## IconTexture: Interface\AddOns\SRLU\images\icon
 
 ## X-Category: UI Media, Questing & Leveling, Audio & Video, Miscellaneous

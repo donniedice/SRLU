@@ -1,3 +1,6 @@
+v2.0.8-------------------------------------------------------------------
+- Updated - TOC version bump for Retail, Vanilla, and Cata [SRLU.toc, SRLU_Vanilla.toc, SRLU_Cata.toc]
+- Updated - Email address updated in TOC files for Retail, Vanilla, and Cata [SRLU.toc, SRLU_Vanilla.toc, SRLU_Cata.toc]
 v2.0.7-------------------------------------------------------------------
 - Updated - Retail TOC to reflect version 110100 [SRLU.toc]
 - Updated - Retail BLU version number to v2.0.7 in TOC [SRLU.toc]
