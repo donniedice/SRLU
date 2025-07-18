@@ -1,3 +1,11 @@
+## v2.1.1 - README Structure Update
+
+- Updated - README structure with improved organization [README.md]
+- Moved - GitHub statistics section to bottom of README [README.md]
+- Removed - Starchart metrics (problematic display) [README.md]
+- Enhanced - Community focus with better section ordering [README.md]
+- Updated - Version bump to 2.1.1 [All TOC files, core.lua]
+
 ## v2.1.0 - Major Feature Enhancement Release
 
 - Added - Complete slash command system with /srlu interface [core.lua]

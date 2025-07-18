@@ -82,53 +82,6 @@
 
 ---
 
-## 📊 Repository Statistics
-
-<div align="center">
-
-<a href="https://github.com/donniedice/SRLU">
-  <img align="center" src="https://github-readme-stats.vercel.app/api?username=donniedice&show_icons=true&include_all_commits=true&theme=radical&hide_border=true" alt="DonnieDice's GitHub Stats" />
-</a>
-
-<a href="https://github.com/donniedice/SRLU">
-  <img align="center" src="https://github-readme-stats.vercel.app/api/top-langs/?username=donniedice&layout=compact&theme=radical&hide_border=true" alt="Top Languages" />
-</a>
-
-</div>
-
-<div align="center">
-
-[![GitHub Activity Graph](https://github-readme-activity-graph.vercel.app/graph?username=donniedice&theme=react-dark&hide_border=true)](https://github.com/donniedice/SRLU)
-
-</div>
-
-<div align="center">
-
-[![Stargazers over time](https://starchart.cc/donniedice/SRLU.svg)](https://starchart.cc/donniedice/SRLU)
-
-</div>
-
----
-
-## 📈 Project Metrics
-
-<div align="center">
-
-| Metric | Value |
-|--------|-------|
-| **Total Lines of Code** | ![Lines of code](https://img.shields.io/tokei/lines/github/donniedice/SRLU?style=flat-square) |
-| **Repository Size** | ![GitHub repo size](https://img.shields.io/github/repo-size/donniedice/SRLU?style=flat-square) |
-| **Last Commit** | ![GitHub last commit](https://img.shields.io/github/last-commit/donniedice/SRLU?style=flat-square) |
-| **Open Issues** | ![GitHub issues](https://img.shields.io/github/issues/donniedice/SRLU?style=flat-square) |
-| **Pull Requests** | ![GitHub pull requests](https://img.shields.io/github/issues-pr/donniedice/SRLU?style=flat-square) |
-| **Contributors** | ![GitHub contributors](https://img.shields.io/github/contributors/donniedice/SRLU?style=flat-square) |
-| **Languages** | ![GitHub top language](https://img.shields.io/github/languages/top/donniedice/SRLU?style=flat-square) |
-| **Watchers** | ![GitHub watchers](https://img.shields.io/github/watchers/donniedice/SRLU?style=flat-square) |
-
-</div>
-
----
-
 ## 🎯 What is SRLU?
 
 **SRLU | Skyrim Level-Up!** is the ultimate **RGX Mods** creation for bringing that satisfying **"LEVEL UP!"** feeling from Skyrim directly into your World of Warcraft experience. No more bland WoW level-up sounds – now you get the epic, triumphant chime that made every Skyrim level-up feel like a true achievement!
@@ -334,50 +287,6 @@ showWelcome = true       -- Show welcome message on login
 
 ---
 
-## 🤝 Contributors
-
-<div align="center">
-
-Thanks to all the amazing people who have contributed to SRLU! 🎉
-
-<a href="https://github.com/donniedice/SRLU/graphs/contributors">
-  <img src="https://contrib.rocks/image?repo=donniedice/SRLU" alt="Contributors" />
-</a>
-
-</div>
-
----
-
-## 🏆 GitHub Achievements
-
-<div align="center">
-
-[![trophy](https://github-profile-trophy.vercel.app/?username=donniedice&theme=radical&no-frame=true&row=1&column=6)](https://github.com/donniedice/SRLU)
-
-</div>
-
----
-
-## 📊 Weekly Development Breakdown
-
-<div align="center">
-
-[![DonnieDice's WakaTime stats](https://github-readme-stats.vercel.app/api/wakatime?username=donniedice&theme=radical&hide_border=true)](https://github.com/donniedice/SRLU)
-
-</div>
-
----
-
-## 🔥 Streak Stats
-
-<div align="center">
-
-[![GitHub Streak](https://github-readme-streak-stats.herokuapp.com?user=donniedice&theme=radical&hide_border=true)](https://github.com/donniedice/SRLU)
-
-</div>
-
----
-
 ## 🤝 RGX Mods Community & Support
 
 ### 💬 **Join RealmGX - Your Gaming Family!**
@@ -427,6 +336,91 @@ The RGX Mods community thrives on collaboration! Here's how you can help:
 This project is licensed under the [MIT License](https://github.com/donniedice/SRLU/blob/main/LICENSE).
 
 **Disclaimer**: This addon is provided "as is" without warranty. Use at your own risk. The author is not responsible for any issues arising from its use.
+
+---
+
+## 📊 Repository Statistics
+
+<div align="center">
+
+<a href="https://github.com/donniedice/SRLU">
+  <img align="center" src="https://github-readme-stats.vercel.app/api?username=donniedice&show_icons=true&include_all_commits=true&theme=radical&hide_border=true" alt="DonnieDice's GitHub Stats" />
+</a>
+
+<a href="https://github.com/donniedice/SRLU">
+  <img align="center" src="https://github-readme-stats.vercel.app/api/top-langs/?username=donniedice&layout=compact&theme=radical&hide_border=true" alt="Top Languages" />
+</a>
+
+</div>
+
+<div align="center">
+
+[![GitHub Activity Graph](https://github-readme-activity-graph.vercel.app/graph?username=donniedice&theme=react-dark&hide_border=true)](https://github.com/donniedice/SRLU)
+
+</div>
+
+---
+
+## 📈 Project Metrics
+
+<div align="center">
+
+| Metric | Value |
+|--------|-------|
+| **Total Lines of Code** | ![Lines of code](https://img.shields.io/tokei/lines/github/donniedice/SRLU?style=flat-square) |
+| **Repository Size** | ![GitHub repo size](https://img.shields.io/github/repo-size/donniedice/SRLU?style=flat-square) |
+| **Last Commit** | ![GitHub last commit](https://img.shields.io/github/last-commit/donniedice/SRLU?style=flat-square) |
+| **Open Issues** | ![GitHub issues](https://img.shields.io/github/issues/donniedice/SRLU?style=flat-square) |
+| **Pull Requests** | ![GitHub pull requests](https://img.shields.io/github/issues-pr/donniedice/SRLU?style=flat-square) |
+| **Contributors** | ![GitHub contributors](https://img.shields.io/github/contributors/donniedice/SRLU?style=flat-square) |
+| **Languages** | ![GitHub top language](https://img.shields.io/github/languages/top/donniedice/SRLU?style=flat-square) |
+| **Watchers** | ![GitHub watchers](https://img.shields.io/github/watchers/donniedice/SRLU?style=flat-square) |
+
+</div>
+
+---
+
+## 🤝 Contributors
+
+<div align="center">
+
+Thanks to all the amazing people who have contributed to SRLU! 🎉
+
+<a href="https://github.com/donniedice/SRLU/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=donniedice/SRLU" alt="Contributors" />
+</a>
+
+</div>
+
+---
+
+## 🏆 GitHub Achievements
+
+<div align="center">
+
+[![trophy](https://github-profile-trophy.vercel.app/?username=donniedice&theme=radical&no-frame=true&row=1&column=6)](https://github.com/donniedice/SRLU)
+
+</div>
+
+---
+
+## 📊 Weekly Development Breakdown
+
+<div align="center">
+
+[![DonnieDice's WakaTime stats](https://github-readme-stats.vercel.app/api/wakatime?username=donniedice&theme=radical&hide_border=true)](https://github.com/donniedice/SRLU)
+
+</div>
+
+---
+
+## 🔥 Streak Stats
+
+<div align="center">
+
+[![GitHub Streak](https://github-readme-streak-stats.herokuapp.com?user=donniedice&theme=radical&hide_border=true)](https://github.com/donniedice/SRLU)
+
+</div>
 
 ---
 

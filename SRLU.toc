@@ -1,5 +1,5 @@
 ## Interface: 110100
-## Version: 2.1.0
+## Version: 2.1.1
 ## Title: - |cffa0a0a0S|r|cffffffffkyrim|r |cffa0a0a0L|r|cffffffffevel-|r |cffa0a0a0U|r|cffffffffp!|r
 ## Notes: Enhanced Skyrim level-up sound addon with slash commands, settings, and multi-language support.|n|r   |cff1f1d1eBy DonnieDice|r
 ## Author: DonnieDice

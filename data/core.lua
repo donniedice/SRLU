@@ -9,7 +9,7 @@ _G.SRLU = SRLU
 
 -- Constants (cached for performance)
 local ADDON_NAME = "SRLU"
-local ADDON_VERSION = "2.1.0"
+local ADDON_VERSION = "2.1.1"
 local DEFAULT_SOUND_ID = 569593 -- WoW's default level-up sound ID
 local SOUND_MASTER_CHANNEL = "Master"
 
