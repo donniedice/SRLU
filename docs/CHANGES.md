@@ -1,3 +1,32 @@
+## v2.1.0 - Major Feature Enhancement Release
+
+- Added - Complete slash command system with /srlu interface [core.lua]
+- Added - Persistent settings via SavedVariables system [SRLUSettings]
+- Added - Multi-language support for English, German, French, Spanish [locales.lua]
+- Added - Sound variant selection (high/medium/low quality) [core.lua]
+- Added - Professional error handling with pcall protection [core.lua]
+- Added - Mists of Pandaria support [SRLU_Mists.toc]
+- Added - Performance optimizations with cached constants [core.lua]
+- Added - Type validation for all user inputs [core.lua]
+- Added - Icon display for all addon output [core.lua]
+- Added - Comprehensive help and status commands [core.lua]
+- Updated - Code architecture with object-oriented design [core.lua]
+- Updated - Memory efficiency through string caching [core.lua]
+- Updated - Event handling with optimized early returns [core.lua]
+- Updated - Email address to donniedice@protonmail.com [All TOC files]
+- Updated - TOC files to v2.1.0 with enhanced descriptions [All TOC files]
+- Updated - Welcome message with clean, professional display [core.lua]
+- Enhanced - Sound management with better error handling [core.lua]
+- Enhanced - Settings system with default value fallbacks [core.lua]
+- Enhanced - User experience with consistent visual branding [core.lua]
+- Restructured - Global namespace management for better organization [core.lua]
+- Restructured - Constants management for performance optimization [core.lua]
+- Fixed - Sound file path from incorrect to proper AddOns directory structure [core.lua]
+- Removed - Redundant help message from welcome display [core.lua]
+- Removed - Global variable pollution through proper scoping [core.lua]
+
+## v2.0.7 - Previous Release
+
 - Updated - Retail TOC to reflect version 110100 [SRLU.toc]
 - Updated - Retail BLU version number to v2.0.7 in TOC [SRLU.toc]
 - Removed - Version number from TOC title (Blizzard added this to the default interface) [SRLU.toc]
