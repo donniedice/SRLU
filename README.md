@@ -105,7 +105,7 @@
 ### 🎵 **Audio Experience**
 - **Custom Skyrim Sound**: Authentic level-up chime
 - **Quality Options**: High, medium, or low quality variants
-- **Volume Control**: Adjust sound levels (0-100%)
+- **Volume Control**: Uses Master channel
 - **Smart Muting**: Auto-mute WoW's default sound
 
 </td>
@@ -170,7 +170,7 @@ Extract to your WoW AddOns directory:
 
 ## 🎛️ Command Reference
 
-Use `/srlu`, `/skyrim`, or `/skyrimlevelup` followed by:
+Use `/srlu` followed by:
 
 <table>
 <tr>
@@ -184,49 +184,34 @@ Use `/srlu`, `/skyrim`, or `/skyrimlevelup` followed by:
 <td><code>/srlu help</code></td>
 </tr>
 <tr>
-<td><code>status</code></td>
-<td>Display current settings</td>
-<td><code>/srlu status</code></td>
-</tr>
-<tr>
-<td><code>enable</code> / <code>disable</code></td>
-<td>Control addon state</td>
-<td><code>/srlu enable</code></td>
-</tr>
-<tr>
-<td><code>toggle</code></td>
-<td>Quick on/off switch</td>
-<td><code>/srlu toggle</code></td>
-</tr>
-<tr>
 <td><code>test</code></td>
 <td>Play test sound</td>
 <td><code>/srlu test</code></td>
 </tr>
 <tr>
-<td><code>sound &lt;quality&gt;</code></td>
-<td>Change sound quality</td>
-<td><code>/srlu sound high</code></td>
+<td><code>enable</code></td>
+<td>Enable addon</td>
+<td><code>/srlu enable</code></td>
 </tr>
 <tr>
-<td><code>volume &lt;0-100&gt;</code></td>
-<td>Set volume level</td>
-<td><code>/srlu volume 75</code></td>
+<td><code>disable</code></td>
+<td>Disable addon (unmutes default sound)</td>
+<td><code>/srlu disable</code></td>
 </tr>
 <tr>
-<td><code>mute</code></td>
-<td>Toggle default WoW sound</td>
-<td><code>/srlu mute</code></td>
+<td><code>high</code></td>
+<td>Use high quality sound</td>
+<td><code>/srlu high</code></td>
 </tr>
 <tr>
-<td><code>welcome</code></td>
-<td>Toggle login message</td>
-<td><code>/srlu welcome</code></td>
+<td><code>med</code></td>
+<td>Use medium quality sound</td>
+<td><code>/srlu med</code></td>
 </tr>
 <tr>
-<td><code>reset</code></td>
-<td>Reset all settings</td>
-<td><code>/srlu reset</code></td>
+<td><code>low</code></td>
+<td>Use low quality sound</td>
+<td><code>/srlu low</code></td>
 </tr>
 </table>
 
@@ -240,10 +225,10 @@ All your settings are automatically saved and restored between gaming sessions u
 ### Default Settings
 ```lua
 enabled = true           -- Addon is active
-soundVariant = "high"    -- Best quality sound
-volume = 100             -- Maximum volume
+soundVariant = "medium"  -- Medium quality sound
 muteDefault = true       -- WoW's default sound is muted
 showWelcome = true       -- Show welcome message on login
+volume = "Master"        -- Volume channel
 ```
 
 ### Troubleshooting
@@ -253,22 +238,19 @@ showWelcome = true       -- Show welcome message on login
 
 ---
 
-## 📈 What's New in v2.1.0
+## 📈 What's New in v2.1.1
 
 <details>
 <summary><strong>🎉 Click to see the massive feature update!</strong></summary>
 
-### 🆕 **Major Additions**
-- ✅ Complete slash command system with `/srlu` interface
-- ✅ Persistent settings via SavedVariables system
-- ✅ Multi-language support (English, German, French, Spanish)
-- ✅ Sound variant selection (high/medium/low quality)
-- ✅ Professional error handling with crash protection
-- ✅ Mists of Pandaria support
-- ✅ Performance optimizations with cached constants
-- ✅ Type validation for all user inputs
-- ✅ Icon display for all addon output
-- ✅ Comprehensive help and status commands
+### 🆕 **Major Updates**
+- ✅ Simplified command structure - direct sound selection
+- ✅ Auto-unmute default sound when disabling addon
+- ✅ Improved performance with optimized code
+- ✅ Updated TOC files with proper formatting
+- ✅ Removed unnecessary complex commands
+- ✅ Enhanced error handling and stability
+- ✅ Russian localization by ZamestoTV (Hubbotu)
 
 ### 🔧 **Improvements**
 - ✅ Object-oriented code architecture

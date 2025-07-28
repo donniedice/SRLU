@@ -1,334 +1,275 @@
 --=====================================================================================
 -- SRLU | Skyrim Level-Up! - core.lua
--- Enhanced version with comprehensive features matching FFLU architecture
+-- Version: 2.1.2
+-- Author: DonnieDice
+-- Description: Professional World of Warcraft addon that plays Skyrim level-up sound
+-- RGX Mods Collection - RealmGX Community Project
 --=====================================================================================
 
--- Create global namespace
-local SRLU = {}
-_G.SRLU = SRLU
+-- Global addon namespace and version info
+SRLU = SRLU or {}
 
 -- Constants (cached for performance)
+local ADDON_VERSION = "2.1.2"
 local ADDON_NAME = "SRLU"
-local ADDON_VERSION = "2.1.1"
-local DEFAULT_SOUND_ID = 569593 -- WoW's default level-up sound ID
-local SOUND_MASTER_CHANNEL = "Master"
-
--- Icon constant for consistent branding
-local ADDON_ICON = "|Tinterface/addons/SRLU/images/icon:16:16|t"
-
--- Sound file paths (corrected from original)
+local ICON_PATH = "|Tinterface/addons/SRLU/images/icon:16:16|t"
 local SOUND_PATHS = {
-    high = "Interface\\AddOns\\SRLU\\sounds\\SRLU.ogg",
-    medium = "Interface\\AddOns\\SRLU\\sounds\\SRLU.ogg", -- Could be separate files if multiple variants exist
-    low = "Interface\\AddOns\\SRLU\\sounds\\SRLU.ogg"
+    high = "Interface\\Addons\\SRLU\\sounds\\SRLU.ogg",
+    medium = "Interface\\Addons\\SRLU\\sounds\\SRLU.ogg",
+    low = "Interface\\Addons\\SRLU\\sounds\\SRLU.ogg"
 }
+local DEFAULT_SOUND_ID = 569593
 
--- Default settings
-local DEFAULT_SETTINGS = {
+-- Set addon properties
+SRLU.version = ADDON_VERSION
+SRLU.addonName = ADDON_NAME  
+SRLU.sounds = SOUND_PATHS
+SRLU.defaultSoundId = DEFAULT_SOUND_ID
+
+-- Default configuration
+SRLU.defaults = {
     enabled = true,
-    soundVariant = "high",
-    volume = 100,
+    soundVariant = "medium",
     muteDefault = true,
-    showWelcome = true
+    showWelcome = true,
+    volume = "Master",
+    firstRun = true
 }
 
--- Initialize settings on first load
-local function InitializeSettings()
-    if not SRLUSettings then
-        SRLUSettings = {}
-    end
+-- Saved variables will be loaded by WoW after ADDON_LOADED event
+-- Do not initialize here as it will override saved settings
+
+-- Initialize addon settings
+function SRLU:InitializeSettings()
+    -- Ensure SavedVariables table exists
+    SRLUSettings = SRLUSettings or {}
     
-    -- Apply defaults for any missing settings
-    for key, value in pairs(DEFAULT_SETTINGS) do
+    -- Set defaults for any missing values
+    for key, value in pairs(self.defaults) do
         if SRLUSettings[key] == nil then
             SRLUSettings[key] = value
         end
     end
 end
 
--- Safe print function with addon branding
-local function SafePrint(message, isError)
-    local success, result = pcall(function()
-        local colorCode = isError and "|cffff0000" or "|cffffffff"
-        local resetCode = "|r"
-        print(ADDON_ICON .. " - [|cffa0a0a0S|r|cffffffffkyrim|r |cffa0a0a0L|r|cffffffffevel|r |cffa0a0a0U|r|cffffffffp!|r] " .. colorCode .. message .. resetCode)
-    end)
+-- Get current settings with fallback to defaults (with type validation)
+function SRLU:GetSetting(key)
+    if not key or type(key) ~= "string" then
+        return nil
+    end
+    
+    -- Return default if SavedVariables not loaded yet
+    if not SRLUSettings then
+        return self.defaults[key]
+    end
+    
+    local value = SRLUSettings[key]
+    if value ~= nil then
+        return value
+    end
+    
+    return self.defaults[key]
+end
+
+-- Set a setting value (with validation)
+function SRLU:SetSetting(key, value)
+    if not key or type(key) ~= "string" or self.defaults[key] == nil then
+        return false
+    end
+    
+    -- Ensure SavedVariables table exists
+    if not SRLUSettings then
+        SRLUSettings = {}
+    end
+    
+    -- Type validation based on default values
+    local defaultType = type(self.defaults[key])
+    if type(value) ~= defaultType then
+        return false
+    end
+    
+    SRLUSettings[key] = value
+    return true
+end
+
+-- Safely play custom sound on level up
+function SRLU:PlayCustomLevelUpSound()
+    if not self:GetSetting("enabled") then
+        return
+    end
+    
+    local soundVariant = self:GetSetting("soundVariant")
+    if not soundVariant then
+        soundVariant = "medium"
+    end
+    
+    local soundPath = SOUND_PATHS[soundVariant]
+    if not soundPath then
+        print(ICON_PATH .. " " .. (self.L and self.L["ERROR_PREFIX"] or "|cffff0000SRLU Error:|r") .. " Invalid sound variant: " .. tostring(soundVariant))
+        return
+    end
+    
+    local volume = self:GetSetting("volume") or "Master"
+    local success = PlaySoundFile(soundPath, volume)
     
     if not success then
-        -- Fallback print without formatting if there's an error
-        print("SRLU: " .. tostring(message))
+        print(ICON_PATH .. " " .. (self.L and self.L["ERROR_PREFIX"] or "|cffff0000SRLU Error:|r") .. " Failed to play sound file: " .. soundPath)
     end
 end
 
--- Validate input types
-local function ValidateInput(value, expectedType, allowNil)
-    if allowNil and value == nil then
-        return true
+
+-- Mute default level up sound
+function SRLU:MuteDefaultLevelUpSound()
+    if self:GetSetting("enabled") and self:GetSetting("muteDefault") then
+        MuteSoundFile(DEFAULT_SOUND_ID)
     end
-    return type(value) == expectedType
 end
 
--- Validate sound variant
-local function IsValidSoundVariant(variant)
-    return variant == "high" or variant == "medium" or variant == "low"
+-- Unmute default level up sound
+function SRLU:UnmuteDefaultLevelUpSound()
+    UnmuteSoundFile(DEFAULT_SOUND_ID)
 end
 
--- Validate volume range
-local function IsValidVolume(volume)
-    return ValidateInput(volume, "number") and volume >= 0 and volume <= 100
-end
-
--- Play custom level-up sound with error handling
-function SRLU.PlayCustomLevelUpSound()
-    if not SRLUSettings.enabled then
+-- Display welcome message on player login
+function SRLU:DisplayWelcomeMessage()
+    if not self:GetSetting("showWelcome") then
         return
     end
     
-    local success, result = pcall(function()
-        local soundPath = SOUND_PATHS[SRLUSettings.soundVariant] or SOUND_PATHS.high
-        local volume = (SRLUSettings.volume or 100) / 100
-        
-        -- Play sound with volume adjustment
-        PlaySoundFile(soundPath, SOUND_MASTER_CHANNEL)
-        
-        -- Note: WoW's PlaySoundFile doesn't directly support volume parameter
-        -- Volume control would need to be implemented via CVars or other methods
-    end)
-    
-    if not success then
-        SafePrint(SRLU.L["ERROR_SOUND_FAILED"], true)
-    end
-end
-
--- Mute/unmute default level-up sound
-function SRLU.ToggleDefaultSound(mute)
-    local success, result = pcall(function()
-        if mute == nil then
-            mute = not SRLUSettings.muteDefault
-        end
-        
-        SRLUSettings.muteDefault = mute
-        
-        if mute then
-            MuteSoundFile(DEFAULT_SOUND_ID)
-            SafePrint(SRLU.L["MUTE_TOGGLED_ON"])
-        else
-            UnmuteSoundFile(DEFAULT_SOUND_ID)
-            SafePrint(SRLU.L["MUTE_TOGGLED_OFF"])
-        end
-    end)
-    
-    if not success then
-        SafePrint(SRLU.L["ERROR_SETTINGS_FAILED"], true)
-    end
-end
-
--- Display welcome message
-function SRLU.DisplayWelcomeMessage()
-    if SRLUSettings.showWelcome then
-        SafePrint(SRLU.L["LOADED"] .. " |cff8080ff(v" .. ADDON_VERSION .. ")|r")
-    end
-end
-
--- Enable addon
-function SRLU.Enable()
-    SRLUSettings.enabled = true
-    SafePrint(SRLU.L["ENABLED"])
-end
-
--- Disable addon  
-function SRLU.Disable()
-    SRLUSettings.enabled = false
-    SafePrint(SRLU.L["DISABLED"])
-end
-
--- Toggle addon state
-function SRLU.Toggle()
-    if SRLUSettings.enabled then
-        SRLU.Disable()
-    else
-        SRLU.Enable()
-    end
-end
-
--- Play test sound
-function SRLU.TestSound()
-    SafePrint(SRLU.L["TEST_SOUND"])
-    SRLU.PlayCustomLevelUpSound()
-end
-
--- Change sound variant
-function SRLU.SetSoundVariant(variant)
-    if not ValidateInput(variant, "string") then
-        SafePrint(SRLU.L["INVALID_SOUND"], true)
+    -- Ensure localization exists
+    if not self.L then
+        print(ICON_PATH .. " |cffff0000SRLU Error:|r Localization not loaded")
         return
     end
     
-    variant = string.lower(variant)
-    if not IsValidSoundVariant(variant) then
-        SafePrint(SRLU.L["INVALID_SOUND"], true)
-        return
+    -- Cached strings for performance
+    local title = "[|cffa0a0a0S|r|cffffffffkyrim|r |cffa0a0a0L|r|cffffffffevel|r |cffa0a0a0U|r|cffffffffp!|r]"
+    local version = "|cff8080ff(v" .. ADDON_VERSION .. ")|r"
+    local rgxMods = "|cffa0a0a0RGX Mods|r"
+    local status = self:GetSetting("enabled") and self.L["ENABLED_STATUS"] or self.L["DISABLED_STATUS"]
+    
+    print(ICON_PATH .. " - " .. title .. " " .. status .. " " .. version .. " - " .. rgxMods)
+    
+    -- Show community message on first run
+    if self:GetSetting("firstRun") then
+        print(ICON_PATH .. " " .. self.L["COMMUNITY_MESSAGE"])
+        self:SetSetting("firstRun", false)
     end
     
-    SRLUSettings.soundVariant = variant
-    local qualityText = SRLU.L["HIGH_QUALITY"]
-    if variant == "medium" then
-        qualityText = SRLU.L["MEDIUM_QUALITY"]
-    elseif variant == "low" then
-        qualityText = SRLU.L["LOW_QUALITY"]
-    end
-    
-    SafePrint(SRLU.L["SOUND_CHANGED"] .. ": " .. qualityText)
-end
-
--- Set volume
-function SRLU.SetVolume(volume)
-    local numVolume = tonumber(volume)
-    if not IsValidVolume(numVolume) then
-        SafePrint(SRLU.L["INVALID_VOLUME"], true)
-        return
-    end
-    
-    SRLUSettings.volume = numVolume
-    SafePrint(SRLU.L["VOLUME_CHANGED"] .. ": " .. numVolume .. "%")
-end
-
--- Toggle welcome message
-function SRLU.ToggleWelcome()
-    SRLUSettings.showWelcome = not SRLUSettings.showWelcome
-    if SRLUSettings.showWelcome then
-        SafePrint(SRLU.L["WELCOME_TOGGLED_ON"])
-    else
-        SafePrint(SRLU.L["WELCOME_TOGGLED_OFF"])
-    end
-end
-
--- Reset all settings
-function SRLU.ResetSettings()
-    for key, value in pairs(DEFAULT_SETTINGS) do
-        SRLUSettings[key] = value
-    end
-    SafePrint(SRLU.L["SETTINGS_RESET"])
-end
-
--- Show current status
-function SRLU.ShowStatus()
-    local status = SRLUSettings.enabled and SRLU.L["ENABLED"] or SRLU.L["DISABLED"]
-    local soundVariant = SRLUSettings.soundVariant or "high"
-    local qualityText = SRLU.L["HIGH_QUALITY"]
-    if soundVariant == "medium" then
-        qualityText = SRLU.L["MEDIUM_QUALITY"]
-    elseif soundVariant == "low" then
-        qualityText = SRLU.L["LOW_QUALITY"]
-    end
-    
-    SafePrint("=== " .. SRLU.L["STATUS"] .. " ===")
-    SafePrint(SRLU.L["VERSION"] .. ": " .. ADDON_VERSION)
-    SafePrint(SRLU.L["STATUS"] .. ": " .. status)
-    SafePrint(SRLU.L["SOUND_VARIANT"] .. ": " .. qualityText)
-    SafePrint(SRLU.L["VOLUME"] .. ": " .. (SRLUSettings.volume or 100) .. "%")
-    SafePrint(SRLU.L["MUTE_DEFAULT"] .. ": " .. (SRLUSettings.muteDefault and SRLU.L["ENABLED"] or SRLU.L["DISABLED"]))
-    SafePrint(SRLU.L["SHOW_WELCOME"] .. ": " .. (SRLUSettings.showWelcome and SRLU.L["ENABLED"] or SRLU.L["DISABLED"]))
-end
-
--- Show help
-function SRLU.ShowHelp()
-    SafePrint("=== " .. SRLU.L["HELP_HEADER"] .. " ===")
-    SafePrint("/srlu enable - " .. SRLU.L["HELP_ENABLE"])
-    SafePrint("/srlu disable - " .. SRLU.L["HELP_DISABLE"])
-    SafePrint("/srlu toggle - " .. SRLU.L["HELP_TOGGLE"])
-    SafePrint("/srlu test - " .. SRLU.L["HELP_TEST"])
-    SafePrint("/srlu status - " .. SRLU.L["HELP_STATUS"])
-    SafePrint("/srlu sound <variant> - " .. SRLU.L["HELP_SOUND"])
-    SafePrint("/srlu volume <0-100> - " .. SRLU.L["HELP_VOLUME"])
-    SafePrint("/srlu mute - " .. SRLU.L["HELP_MUTE"])
-    SafePrint("/srlu welcome - " .. SRLU.L["HELP_WELCOME"])
-    SafePrint("/srlu reset - " .. SRLU.L["HELP_RESET"])
-    SafePrint("/srlu help - " .. SRLU.L["HELP_HELP"])
+    print(ICON_PATH .. " " .. self.L["TYPE_HELP"])
 end
 
 -- Slash command handler
-local function HandleSlashCommand(input)
-    local success, result = pcall(function()
-        if not input or input == "" then
-            SRLU.ShowStatus()
-            return
-        end
-        
-        local args = {}
-        for word in input:gmatch("%S+") do
-            table.insert(args, string.lower(word))
-        end
-        
-        local command = args[1]
-        
-        if command == "help" then
-            SRLU.ShowHelp()
-        elseif command == "enable" then
-            SRLU.Enable()
-        elseif command == "disable" then
-            SRLU.Disable()
-        elseif command == "toggle" then
-            SRLU.Toggle()
-        elseif command == "test" then
-            SRLU.TestSound()
-        elseif command == "status" then
-            SRLU.ShowStatus()
-        elseif command == "sound" then
-            if args[2] then
-                SRLU.SetSoundVariant(args[2])
-            else
-                SafePrint(SRLU.L["INVALID_SOUND"], true)
-            end
-        elseif command == "volume" then
-            if args[2] then
-                SRLU.SetVolume(args[2])
-            else
-                SafePrint(SRLU.L["INVALID_VOLUME"], true)
-            end
-        elseif command == "mute" then
-            SRLU.ToggleDefaultSound()
-        elseif command == "welcome" then
-            SRLU.ToggleWelcome()
-        elseif command == "reset" then
-            SRLU.ResetSettings()
-        else
-            SafePrint(SRLU.L["INVALID_COMMAND"], true)
-        end
-    end)
+function SRLU:HandleSlashCommand(args)
+    -- Ensure localization exists
+    if not self.L then
+        print(ICON_PATH .. " |cffff0000SRLU Error:|r Localization not loaded")
+        return
+    end
     
-    if not success then
-        SafePrint(SRLU.L["ERROR_UNEXPECTED"], true)
+    -- Use cached icon path
+    local iconPrefix = ICON_PATH
+    
+    local command = string.lower(args or "")
+    
+    if command == "" or command == "help" then
+        self:ShowHelp()
+    elseif command == "test" then
+        print(iconPrefix .. " |cffa0a0a0SRLU:|r " .. self.L["PLAYING_TEST"])
+        self:PlayCustomLevelUpSound()
+    elseif command == "enable" then
+        self:SetSetting("enabled", true)
+        self:MuteDefaultLevelUpSound()
+        print(iconPrefix .. " |cffa0a0a0SRLU:|r " .. self.L["ADDON_ENABLED"])
+    elseif command == "disable" then
+        self:SetSetting("enabled", false)
+        self:UnmuteDefaultLevelUpSound()
+        print(iconPrefix .. " |cffa0a0a0SRLU:|r " .. self.L["ADDON_DISABLED"])
+    elseif command == "high" then
+        self:SetSetting("soundVariant", "high")
+        print(iconPrefix .. " |cffa0a0a0SRLU:|r " .. string.format(self.L["SOUND_VARIANT_SET"], "high"))
+    elseif command == "med" or command == "medium" then
+        self:SetSetting("soundVariant", "medium")
+        print(iconPrefix .. " |cffa0a0a0SRLU:|r " .. string.format(self.L["SOUND_VARIANT_SET"], "medium"))
+    elseif command == "low" then
+        self:SetSetting("soundVariant", "low")
+        print(iconPrefix .. " |cffa0a0a0SRLU:|r " .. string.format(self.L["SOUND_VARIANT_SET"], "low"))
+    else
+        print(iconPrefix .. " " .. self.L["ERROR_PREFIX"] .. " " .. self.L["ERROR_UNKNOWN_COMMAND"])
     end
 end
 
--- Register slash commands
-SLASH_SRLU1 = "/srlu"
-SLASH_SRLU2 = "/skyrim"
-SLASH_SRLU3 = "/skyrimlevelup"
-SlashCmdList["SRLU"] = HandleSlashCommand
-
--- Event frame and handling
-local frame = CreateFrame("Frame")
-frame:RegisterEvent("PLAYER_LEVEL_UP")
-frame:RegisterEvent("ADDON_LOADED")
-frame:RegisterEvent("PLAYER_LOGIN")
-
-frame:SetScript("OnEvent", function(self, event, ...)
-    local success, result = pcall(function()
-        if event == "PLAYER_LEVEL_UP" then
-            SRLU.PlayCustomLevelUpSound()
-        elseif event == "ADDON_LOADED" and ... == ADDON_NAME then
-            InitializeSettings()
-            if SRLUSettings.muteDefault then
-                MuteSoundFile(DEFAULT_SOUND_ID)
-            end
-        elseif event == "PLAYER_LOGIN" then
-            SRLU.DisplayWelcomeMessage()
-        end
-    end)
+-- Show help information
+function SRLU:ShowHelp()
+    -- Ensure localization exists
+    if not self.L then
+        print(ICON_PATH .. " |cffff0000SRLU Error:|r Localization not loaded")
+        return
+    end
     
+    local iconPrefix = ICON_PATH
+    print(iconPrefix .. " " .. self.L["HELP_HEADER"])
+    print(iconPrefix .. " " .. self.L["HELP_TEST"])
+    print(iconPrefix .. " " .. self.L["HELP_ENABLE"])
+    print(iconPrefix .. " " .. self.L["HELP_DISABLE"])
+    print(iconPrefix .. " |cffffffff/srlu high|r - Use high quality sound")
+    print(iconPrefix .. " |cffffffff/srlu med|r - Use medium quality sound")
+    print(iconPrefix .. " |cffffffff/srlu low|r - Use low quality sound")
+end
+
+-- Removed ShowStatus and ResetSettings functions - no longer needed
+
+-- Track initialization state
+SRLU.initialized = false
+
+-- Event handler function (optimized with early returns)
+function SRLU:OnEvent(event, ...)
+    if event == "PLAYER_LEVEL_UP" then
+        -- Only play sound if addon is fully initialized
+        if self.initialized then
+            self:PlayCustomLevelUpSound()
+        end
+        return
+    end
+    
+    if event == "ADDON_LOADED" then
+        local addonName = ...
+        if addonName == ADDON_NAME then
+            self:InitializeSettings()
+            self:MuteDefaultLevelUpSound()
+            self.initialized = true
+        end
+        return
+    end
+    
+    if event == "PLAYER_LOGIN" then
+        -- Ensure we're initialized before showing welcome
+        if not self.initialized then
+            self:InitializeSettings()
+            self:MuteDefaultLevelUpSound()
+            self.initialized = true
+        end
+        self:DisplayWelcomeMessage()
+    end
+end
+
+-- Register slash commands with error handling
+SLASH_SRLU1 = "/srlu"
+SlashCmdList["SRLU"] = function(args)
+    local success, errorMsg = pcall(SRLU.HandleSlashCommand, SRLU, args)
     if not success then
-        SafePrint(SRLU.L["ERROR_UNEXPECTED"], true)
+        print(ICON_PATH .. " |cffff0000SRLU Error:|r " .. tostring(errorMsg))
+    end
+end
+
+-- Event frame setup with error handling
+local eventFrame = CreateFrame("Frame")
+eventFrame:RegisterEvent("PLAYER_LEVEL_UP")
+eventFrame:RegisterEvent("ADDON_LOADED")
+eventFrame:RegisterEvent("PLAYER_LOGIN")
+eventFrame:SetScript("OnEvent", function(self, event, ...)
+    local success, errorMsg = pcall(SRLU.OnEvent, SRLU, event, ...)
+    if not success then
+        print(ICON_PATH .. " |cffff0000SRLU Error:|r Event handler failed: " .. tostring(errorMsg))
     end
 end)

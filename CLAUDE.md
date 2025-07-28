@@ -4,12 +4,12 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-SRLU (Skyrim Level-Up!) is a comprehensive World of Warcraft addon that plays the iconic "LEVEL UP!" chime from Skyrim when players level up. As of v2.1.0, it features a professional architecture with slash commands, persistent settings, multi-language support, and extensive error handling.
+SRLU (Skyrim Level-Up!) is a professional World of Warcraft addon that plays the iconic Skyrim level-up sound when players level up. As of v2.1.1, it features a simplified command structure with direct sound selection, persistent settings, multi-language support, and extensive error handling as part of the RGX Mods collection.
 
 ## Project Structure
 
 - **data/core.lua**: Main addon functionality with advanced features
-- **data/locales.lua**: Multi-language support (English, German, French, Spanish)
+- **data/locales.lua**: Multi-language support (English, Russian, German, French, Spanish)
 - **sounds/SRLU.ogg**: Custom Skyrim level-up sound file
 - **images/**: Addon icon and logo assets
 - **SRLU.toc**: TOC file for retail WoW (The War Within)
@@ -30,12 +30,20 @@ This project has no build system, test suite, or development scripts. It's a WoW
 When updating versions:
 1. Update version numbers in all four .toc files (SRLU.toc, SRLU_Cata.toc, SRLU_Vanilla.toc, SRLU_Mists.toc)
 2. Update interface version numbers for each WoW version in the respective .toc files
+   - SRLU.toc: 110100 (Retail)
+   - SRLU_Cata.toc: 40402 (Cataclysm)
+   - SRLU_Vanilla.toc: 11506 (Classic)
+   - SRLU_Mists.toc: 50400 (MoP)
 3. Update the version constant in data/core.lua:12 (`ADDON_VERSION`)
 4. Update docs/CHANGES.md and docs/changelog.txt
 
+## Commands
+
+Use `/srlu` followed by: `help`, `test`, `enable`, `disable`, `high`, `med`, `low`
+
 ## Code Architecture
 
-The addon uses a professional object-oriented, event-driven architecture:
+The addon uses an optimized, professional architecture:
 
 ### **Namespace Management**:
 - Uses `_G.SRLU = SRLU` for global namespace
@@ -54,18 +62,16 @@ The addon uses a professional object-oriented, event-driven architecture:
 - `PLAYER_LOGIN`: Displays welcome message (if enabled)
 
 ### **Slash Command System**:
-Multiple command aliases: `/srlu`, `/skyrim`, `/skyrimlevelup`
+Use `/srlu` followed by various commands for full functionality:
 
 **Available Commands**:
-- `/srlu` or `/srlu status` - Show current settings
-- `/srlu help` - Show command help
-- `/srlu enable/disable/toggle` - Control addon state
+- `/srlu help` - Show all available commands
 - `/srlu test` - Play test sound
-- `/srlu sound <high|medium|low>` - Change sound variant
-- `/srlu volume <0-100>` - Set volume level
-- `/srlu mute` - Toggle default WoW level-up sound
-- `/srlu welcome` - Toggle welcome message
-- `/srlu reset` - Reset all settings to defaults
+- `/srlu enable` - Enable addon
+- `/srlu disable` - Disable addon (unmutes default sound)
+- `/srlu high` - Use high quality sound
+- `/srlu med` - Use medium quality sound
+- `/srlu low` - Use low quality sound
 
 ### **Error Handling**:
 - **pcall Protection**: All major functions wrapped in pcall
@@ -73,17 +79,16 @@ Multiple command aliases: `/srlu`, `/skyrim`, `/skyrimlevelup`
 - **Professional Messaging**: Consistent error reporting with addon branding
 
 ### **Localization**:
-- **Multi-language Support**: English, German (deDE), French (frFR), Spanish (esES/esMX)
+- **Multi-language Support**: English, Russian (ruRU), German (deDE), French (frFR), Spanish (esES/esMX)
 - **Fallback System**: English used if localization fails
 - **Runtime Detection**: Automatic language selection via GetLocale()
 
 ### **Core Functions**:
 - `SRLU.PlayCustomLevelUpSound()`: Enhanced sound playback with settings
-- `SRLU.ToggleDefaultSound()`: Mute/unmute WoW's default sound
+- `SRLU.MuteDefaultLevelUpSound()`: Mute WoW's default sound
+- `SRLU.UnmuteDefaultLevelUpSound()`: Unmute WoW's default sound
 - `SRLU.DisplayWelcomeMessage()`: Professional welcome display
-- `SRLU.ShowStatus()`: Comprehensive settings display
-- `SRLU.SetSoundVariant()`: Change sound quality with validation
-- `SRLU.SetVolume()`: Volume control with range validation
+- `SRLU.ShowHelp()`: Display available commands
 
 ## File Paths and Compatibility
 
@@ -97,10 +102,11 @@ Multiple command aliases: `/srlu`, `/skyrim`, `/skyrimlevelup`
 ```lua
 {
     enabled = true,
-    soundVariant = "high",
-    volume = 100,
+    soundVariant = "medium",
     muteDefault = true,
-    showWelcome = true
+    showWelcome = true,
+    volume = "Master",
+    firstRun = true
 }
 ```
 

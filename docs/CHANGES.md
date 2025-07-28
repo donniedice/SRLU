@@ -1,10 +1,14 @@
-## v2.1.1 - README Structure Update
+## v2.1.1 - Simplified Commands & Performance Update
 
-- Updated - README structure with improved organization [README.md]
-- Moved - GitHub statistics section to bottom of README [README.md]
-- Removed - Starchart metrics (problematic display) [README.md]
-- Enhanced - Community focus with better section ordering [README.md]
-- Updated - Version bump to 2.1.1 [All TOC files, core.lua]
+- Updated - Simplified command structure with direct sound selection [core.lua]
+- Added - Auto-unmute default sound when disabling addon [core.lua]
+- Added - Russian localization by ZamestoTV (Hubbotu) [locales.lua]
+- Updated - TOC files with proper formatting and color codes [All TOC files]
+- Removed - Unnecessary complex commands for cleaner UX [core.lua, locales.lua]
+- Enhanced - Performance optimizations throughout codebase [core.lua]
+- Fixed - Localization initialization issues [locales.lua]
+- Updated - README with simplified command documentation [README.md]
+- Updated - CLAUDE.md with current architecture details [CLAUDE.md]
 
 ## v2.1.0 - Major Feature Enhancement Release
 
