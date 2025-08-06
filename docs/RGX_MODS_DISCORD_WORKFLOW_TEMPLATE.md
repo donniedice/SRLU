@@ -16,7 +16,7 @@ This template should be used for all RGX Mods addon repositories to ensure consi
 
 3. Add GitHub Secret:
    - Name: `DISCORD_WEBHOOK`
-   - Value: Your Discord webhook URL
+   - Value: Your Discord webhook URL (MUST be unique per addon - see DISCORD_WEBHOOK_SETUP_GUIDE.md)
 
 ## Standard Workflow Template
 
@@ -211,11 +211,13 @@ For each addon repository:
 
 ## Common Issues
 
-1. **JSON Parsing Errors**: Ensure all strings are properly escaped with backslashes
-2. **Multi-line Text**: Release body text needs special handling (see template)
-3. **Webhook URL**: Must be set as GitHub secret, not hardcoded
-4. **Color Values**: Must use decimal values, not hex
-5. **Image URLs**: Must be direct links to images (raw.githubusercontent.com)
+1. **Wrong Channel Posting**: Each addon MUST have its own unique webhook URL
+2. **JSON Parsing Errors**: Ensure all strings are properly escaped with backslashes
+3. **Multi-line Text**: Release body text needs special handling (see template)
+4. **Webhook URL**: Must be set as GitHub secret, not hardcoded
+5. **Color Values**: Must use decimal values, not hex
+6. **Image URLs**: Must be direct links to images (raw.githubusercontent.com)
+7. **Wrong Icons**: Check actual filenames in images/ folder (logo.png vs ADDON_logo_400x400.png)
 
 ## Maintaining Consistency
 
