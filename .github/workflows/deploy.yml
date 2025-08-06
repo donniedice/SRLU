@@ -23,7 +23,11 @@ jobs:
         run: |
           if [ "${{ github.event_name }}" == "release" ]; then
             echo "version=${{ github.event.release.tag_name }}" >> $GITHUB_OUTPUT
-            echo "body=${{ github.event.release.body }}" >> $GITHUB_OUTPUT
+            
+            # Handle multi-line body properly
+            BODY=$(echo "${{ github.event.release.body }}" | head -c 500 | sed 's/"/\\"/g' | sed ':a;N;$!ba;s/\n/\\n/g')
+            echo "body=$BODY" >> $GITHUB_OUTPUT
+            
             echo "url=${{ github.event.release.html_url }}" >> $GITHUB_OUTPUT
             echo "name=${{ github.event.release.name }}" >> $GITHUB_OUTPUT
           else
@@ -37,48 +41,41 @@ jobs:
         env:
           DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
         run: |
-          # Prepare the message body
-          BODY="${{ steps.release_info.outputs.body }}"
-          # Truncate body if too long for Discord
-          if [ ${#BODY} -gt 1024 ]; then
-            BODY="${BODY:0:1021}..."
-          fi
-          
-          # Create the Discord embed
+          # Create simple Discord message
           curl -H "Content-Type: application/json" \
                -X POST \
-               -d '{
-                 "username": "SRLU Bot",
-                 "avatar_url": "https://raw.githubusercontent.com/${{ github.repository }}/main/images/SRLU_logo_400x400.png",
-                 "embeds": [{
-                   "title": "🎮 ${{ steps.release_info.outputs.name }}",
-                   "description": "'"$BODY"'",
-                   "url": "${{ steps.release_info.outputs.url }}",
-                   "color": 5814783,
-                   "fields": [
+               -d "{
+                 \"username\": \"SRLU Bot\",
+                 \"avatar_url\": \"https://raw.githubusercontent.com/donniedice/SRLU/main/images/SRLU_logo_400x400.png\",
+                 \"embeds\": [{
+                   \"title\": \"🎮 ${{ steps.release_info.outputs.name }}\",
+                   \"description\": \"A new version of SRLU has been released!\",
+                   \"url\": \"${{ steps.release_info.outputs.url }}\",
+                   \"color\": 9132843,
+                   \"fields\": [
                      {
-                       "name": "Version",
-                       "value": "`${{ steps.release_info.outputs.version }}`",
-                       "inline": true
+                       \"name\": \"Version\",
+                       \"value\": \"\`${{ steps.release_info.outputs.version }}\`\",
+                       \"inline\": true
                      },
                      {
-                       "name": "Repository",
-                       "value": "[GitHub](${{ github.server_url }}/${{ github.repository }})",
-                       "inline": true
+                       \"name\": \"Repository\",
+                       \"value\": \"[GitHub](${{ github.server_url }}/${{ github.repository }})\",
+                       \"inline\": true
                      },
                      {
-                       "name": "Downloads",
-                       "value": "[CurseForge](https://www.curseforge.com/wow/addons/srlu) | [Wago](https://addons.wago.io/addons/srlu)",
-                       "inline": false
+                       \"name\": \"Downloads\",
+                       \"value\": \"[CurseForge](https://www.curseforge.com/wow/addons/srlu) | [Wago](https://addons.wago.io/addons/srlu)\",
+                       \"inline\": false
                      }
                    ],
-                   "footer": {
-                     "text": "RGX Mods",
-                     "icon_url": "https://raw.githubusercontent.com/${{ github.repository }}/main/images/icon.tga"
+                   \"footer\": {
+                     \"text\": \"RGX Mods - Skyrim Level-Up!\",
+                     \"icon_url\": \"https://raw.githubusercontent.com/donniedice/SimpleQuestPlates/main/images/kiwi.gif\"
                    },
-                   "timestamp": "'"$(date -u +%Y-%m-%dT%H:%M:%S.000Z)"'"
+                   \"timestamp\": \"$(date -u +%Y-%m-%dT%H:%M:%S.000Z)\"
                  }]
-               }' \
+               }" \
                "$DISCORD_WEBHOOK"
       
       - name: Deploy to CurseForge
