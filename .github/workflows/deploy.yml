@@ -46,8 +46,8 @@ jobs:
                -X POST \
                -d "{
                  \"content\": \"@everyone\",
-                 \"username\": \"RGX Mods Update\",
-                 \"avatar_url\": \"https://raw.githubusercontent.com/donniedice/SimpleQuestPlates/main/images/kiwi.gif\",
+                 \"username\": \"SRLU Update\",
+                 \"avatar_url\": \"https://raw.githubusercontent.com/donniedice/SRLU/main/images/SRLU_logo_400x400.png\",
                  \"embeds\": [{
                    \"title\": \"🗡️ SRLU | Skyrim Level-Up! - ${{ steps.release_info.outputs.version }}\",
                    \"description\": \"**Fus Ro DAH!** - A new version of SRLU has been released!\\n\\n🎵 **What's New:**\\n• Documentation overhaul with RGX Mods Brand Standards\\n• Discord webhook notifications\\n• Complete CurseForge description\\n• Updated README with proper formatting\\n\\n**Transform your WoW leveling experience with the iconic Skyrim level-up sound!**\",
