@@ -4,18 +4,7 @@
 
 **<span style="color:#8B4513">"Fus Ro DAH!"</span> <span style="color:#e67e23">- Now in</span> <span style="color:#06c">World of Warcraft</span><span style="color:#e67e23">!</span>**
 
-[![GitHub release](https://img.shields.io/github/v/release/donniedice/SRLU?style=for-the-badge&color=success)](https://github.com/donniedice/SRLU/releases)
-[![GitHub stars](https://img.shields.io/github/stars/donniedice/SRLU?style=for-the-badge&color=yellow)](https://github.com/donniedice/SRLU/stargazers)
-[![GitHub issues](https://img.shields.io/github/issues/donniedice/SRLU?style=for-the-badge&color=red)](https://github.com/donniedice/SRLU/issues)
-[![Discord](https://img.shields.io/badge/Discord-Join%20Us-7289da?style=for-the-badge&logo=discord)](https://discord.gg/N7kdKAHVVF)
-
-[![GitHub last commit](https://img.shields.io/github/last-commit/donniedice/SRLU?style=flat-square)](https://github.com/donniedice/SRLU/commits/main)
-[![GitHub repo size](https://img.shields.io/github/repo-size/donniedice/SRLU?style=flat-square)](https://github.com/donniedice/SRLU)
-[![GitHub top language](https://img.shields.io/github/languages/top/donniedice/SRLU?style=flat-square)](https://github.com/donniedice/SRLU)
-
-[![CurseForge Downloads](https://img.shields.io/badge/CurseForge-Downloads-orange?style=flat-square)](https://www.curseforge.com/wow/addons/srlu)
-[![Wago Downloads](https://img.shields.io/badge/Wago.io-Downloads-purple?style=flat-square)](https://addons.wago.io/addons/srlu)
-[![WoWInterface Downloads](https://img.shields.io/badge/WoWInterface-Downloads-blue?style=flat-square)](https://www.wowinterface.com/downloads/info26265-SRLU-SkyrimLevelUp.html)
+[![CurseForge Downloads](https://img.shields.io/badge/CurseForge-Downloads-orange?style=for-the-badge)](https://www.curseforge.com/wow/addons/srlu) [![GitHub Stars](https://img.shields.io/github/stars/donniedice/SRLU?style=for-the-badge&color=yellow)](https://github.com/donniedice/SRLU) [![Discord Community](https://img.shields.io/badge/Join%20Our%20Discord-RealmGX%20Community-7289da?style=for-the-badge&logo=discord)](https://discord.gg/N7kdKAHVVF)
 
 ---
 
@@ -61,10 +50,9 @@
 
 ## <span style="color:#8B4513">📥 Quick Installation</span>
 
-**<span style="color:#2dc26b">1.</span>** <span style="color:#e67e23">Download from</span> [<span style="color:#ff6b6b">CurseForge</span>](https://www.curseforge.com/wow/addons/srlu)<span style="color:#e67e23">,</span> [<span style="color:#b96ad9">Wago</span>](https://addons.wago.io/addons/srlu)<span style="color:#e67e23">, or</span> [<span style="color:#24292e">GitHub</span>](https://github.com/donniedice/SRLU)  
-**<span style="color:#2dc26b">2.</span>** <span style="color:#e67e23">Extract to your WoW AddOns folder</span>  
-**<span style="color:#2dc26b">3.</span>** <span style="color:#e67e23">Enable</span> <span style="color:#8B4513">S</span><span style="color:#8B4513">R</span><span style="color:#8B4513">L</span><span style="color:#8B4513">U</span> <span style="color:#e67e23">in your AddOns menu</span>  
-**<span style="color:#2dc26b">4.</span>** <span style="color:#e67e23">Type</span> <span style="color:#2dc26b">`/srlu help`</span> <span style="color:#e67e23">to get started!</span>
+**<span style="color:#2dc26b">Step 1</span><span style="color:#3598db">:</span>** <span style="color:#e67e23">Download and extract to your AddOns folder</span>  
+**<span style="color:#2dc26b">Step 2</span><span style="color:#3598db">:</span>** <span style="color:#e67e23">Enable</span> <span style="color:#8B4513">S</span><span style="color:#8B4513">R</span><span style="color:#8B4513">L</span><span style="color:#8B4513">U</span> <span style="color:#e67e23">in your AddOns menu</span>  
+**<span style="color:#2dc26b">Step 3</span><span style="color:#3598db">:</span>** <span style="color:#e67e23">Type</span> <span style="color:#2dc26b">`/srlu help`</span> <span style="color:#e67e23">to get started!</span>
 
 <span style="color:#e67e23">The addon works immediately - level up and hear the</span> <span style="color:#8B4513">Skyrim</span> <span style="color:#e67e23">magic!</span>
 
@@ -117,34 +105,6 @@
 
 ---
 
-## <span style="color:#8B4513">🛠️ Technical Details</span>
-
-### <span style="color:#b96ad9">Architecture</span>
-
-<span style="color:#8B4513">S</span><span style="color:#8B4513">R</span><span style="color:#8B4513">L</span><span style="color:#8B4513">U</span> <span style="color:#e67e23">uses modern WoW addon architecture</span><span style="color:#3598db">:</span>
-
-- <span style="color:#2dc26b">**Object-oriented design**</span> <span style="color:#e67e23">with namespace management</span>
-- <span style="color:#2dc26b">**Cached constants**</span> <span style="color:#e67e23">for optimal performance</span>
-- <span style="color:#2dc26b">**pcall protection**</span> <span style="color:#e67e23">for error handling</span>
-- <span style="color:#2dc26b">**Event-driven**</span> <span style="color:#e67e23">with minimal overhead</span>
-
-### <span style="color:#b96ad9">File Structure</span>
-
-```
-SRLU/
-├── data/
-│   ├── core.lua        # Main addon logic
-│   └── locales.lua     # Localization strings
-├── sounds/
-│   └── SRLU.ogg        # Skyrim level-up sound
-├── images/
-│   ├── icon.tga        # Addon icon
-│   └── SRLU_logo_400x400.png
-└── *.toc files         # Interface files
-```
-
----
-
 ## <span style="color:#8B4513">🌟 Join the</span> <span style="color:#8B1538">R</span><span style="color:#8B1538">G</span><span style="color:#8B1538">X</span> <span style="color:#4ecdc4">Mods Community!</span>
 
 ### <span style="color:#b96ad9">💬</span> [<span style="color:#8B1538">R</span><span style="color:#7598b6">ealm</span><span style="color:#8B1538">G</span><span style="color:#8B1538">X</span>](https://realmgx.com) <span style="color:#8B4513">Discord</span> <span style="color:#3598db">-</span> <span style="color:#2dc26b">Your Gaming Home!</span>
@@ -172,42 +132,7 @@ SRLU/
 | [![Donate](https://img.shields.io/badge/Donate-CashApp-00C853?style=for-the-badge&logo=cash-app&logoColor=white)](https://bit.ly/3fyxxSU) | [![Buy Me a Coffee](https://img.shields.io/badge/Buy%20Me%20a%20Coffee-Support-FFDD00?style=for-the-badge&logo=buy-me-a-coffee&logoColor=black)](https://buymeacoffee.com/donniedice) |
 | [![GitHub Sponsor](https://img.shields.io/badge/Sponsor-GitHub-ff69b4?style=for-the-badge&logo=github-sponsors&logoColor=white)](https://github.com/sponsors/donniedice) | [![PayPal](https://img.shields.io/badge/PayPal-Donate-00457C?style=for-the-badge&logo=paypal&logoColor=white)](https://paypal.me/donniedice) |
 
-[![Star this repository](https://img.shields.io/badge/⭐%20Star%20this%20repository-Support%20the%20project-yellow?style=for-the-badge)](https://github.com/donniedice/SRLU)
-
 <span style="color:#e67e23">Every coffee helps fund new features and improvements!</span>
-
----
-
-## <span style="color:#8B4513">📊 Repository Statistics</span>
-
-![GitHub Activity Graph](https://github-readme-activity-graph.vercel.app/graph?username=donniedice&repo=SRLU&theme=react-dark&hide_border=true&area=true)
-
-| Metric | Value |
-|--------|-------|
-| **<span style="color:#2dc26b">Total Lines</span>** | ![Lines of code](https://img.shields.io/tokei/lines/github/donniedice/SRLU?style=flat-square&color=green) |
-| **<span style="color:#b96ad9">Repository Size</span>** | ![GitHub repo size](https://img.shields.io/github/repo-size/donniedice/SRLU?style=flat-square&color=purple) |
-| **<span style="color:#ff6b6b">Last Commit</span>** | ![GitHub last commit](https://img.shields.io/github/last-commit/donniedice/SRLU?style=flat-square&color=red) |
-| **<span style="color:#4ecdc4">Open Issues</span>** | ![GitHub issues](https://img.shields.io/github/issues/donniedice/SRLU?style=flat-square&color=teal) |
-| **<span style="color:#8B4513">Contributors</span>** | ![GitHub contributors](https://img.shields.io/github/contributors/donniedice/SRLU?style=flat-square&color=brown) |
-
----
-
-## <span style="color:#8B4513">🤝 Contributing</span>
-
-<span style="color:#e67e23">Contributions are welcome! Here's how you can help</span><span style="color:#3598db">:</span>
-
-- <span style="color:#2dc26b">🐛 **Report bugs**</span> <span style="color:#e67e23">via</span> [<span style="color:#b96ad9">GitHub Issues</span>](https://github.com/donniedice/SRLU/issues)
-- <span style="color:#2dc26b">💡 **Suggest features**</span> <span style="color:#e67e23">in our</span> [<span style="color:#7289da">Discord</span>](https://discord.gg/N7kdKAHVVF)
-- <span style="color:#2dc26b">🌍 **Add translations**</span> <span style="color:#e67e23">for more languages</span>
-- <span style="color:#2dc26b">⭐ **Star the repo**</span> <span style="color:#e67e23">to show support</span>
-
----
-
-## <span style="color:#8B4513">📄 License</span>
-
-<span style="color:#e67e23">This project is licensed under the</span> [<span style="color:#2dc26b">MIT License</span>](LICENSE)<span style="color:#e67e23">.</span>
-
-<span style="color:#e67e23">**Disclaimer</span><span style="color:#3598db">:</span> <span style="color:#e67e23">This addon is provided "as is" without warranty. Use at your own risk.</span>
 
 ---
 

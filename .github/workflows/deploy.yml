@@ -1,0 +1,100 @@
+name: Deploy and Notify
+
+on:
+  release:
+    types: [published]
+  workflow_dispatch:
+    inputs:
+      version:
+        description: 'Version number for manual deployment'
+        required: true
+        type: string
+
+jobs:
+  notify-discord:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      
+      - name: Get release information
+        id: release_info
+        run: |
+          if [ "${{ github.event_name }}" == "release" ]; then
+            echo "version=${{ github.event.release.tag_name }}" >> $GITHUB_OUTPUT
+            echo "body=${{ github.event.release.body }}" >> $GITHUB_OUTPUT
+            echo "url=${{ github.event.release.html_url }}" >> $GITHUB_OUTPUT
+            echo "name=${{ github.event.release.name }}" >> $GITHUB_OUTPUT
+          else
+            echo "version=${{ github.event.inputs.version }}" >> $GITHUB_OUTPUT
+            echo "body=Manual deployment triggered" >> $GITHUB_OUTPUT
+            echo "url=${{ github.server_url }}/${{ github.repository }}" >> $GITHUB_OUTPUT
+            echo "name=SRLU ${{ github.event.inputs.version }}" >> $GITHUB_OUTPUT
+          fi
+      
+      - name: Send Discord notification
+        env:
+          DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
+        run: |
+          # Prepare the message body
+          BODY="${{ steps.release_info.outputs.body }}"
+          # Truncate body if too long for Discord
+          if [ ${#BODY} -gt 1024 ]; then
+            BODY="${BODY:0:1021}..."
+          fi
+          
+          # Create the Discord embed
+          curl -H "Content-Type: application/json" \
+               -X POST \
+               -d '{
+                 "username": "SRLU Bot",
+                 "avatar_url": "https://raw.githubusercontent.com/${{ github.repository }}/main/images/SRLU_logo_400x400.png",
+                 "embeds": [{
+                   "title": "🎮 ${{ steps.release_info.outputs.name }}",
+                   "description": "'"$BODY"'",
+                   "url": "${{ steps.release_info.outputs.url }}",
+                   "color": 5814783,
+                   "fields": [
+                     {
+                       "name": "Version",
+                       "value": "`${{ steps.release_info.outputs.version }}`",
+                       "inline": true
+                     },
+                     {
+                       "name": "Repository",
+                       "value": "[GitHub](${{ github.server_url }}/${{ github.repository }})",
+                       "inline": true
+                     },
+                     {
+                       "name": "Downloads",
+                       "value": "[CurseForge](https://www.curseforge.com/wow/addons/srlu) | [Wago](https://addons.wago.io/addons/srlu)",
+                       "inline": false
+                     }
+                   ],
+                   "footer": {
+                     "text": "RGX Mods",
+                     "icon_url": "https://raw.githubusercontent.com/${{ github.repository }}/main/images/icon.tga"
+                   },
+                   "timestamp": "'"$(date -u +%Y-%m-%dT%H:%M:%S.000Z)"'"
+                 }]
+               }' \
+               "$DISCORD_WEBHOOK"
+      
+      - name: Deploy to CurseForge
+        if: github.event_name == 'release'
+        env:
+          CURSEFORGE_API_TOKEN: ${{ secrets.CURSEFORGE_API_TOKEN }}
+        run: |
+          echo "CurseForge deployment would happen here"
+          echo "This step requires the CurseForge API token to be configured"
+          # Add actual CurseForge deployment logic here when API token is available
+      
+      - name: Deploy to Wago
+        if: github.event_name == 'release'
+        env:
+          WAGO_API_TOKEN: ${{ secrets.WAGO_API_TOKEN }}
+        run: |
+          echo "Wago deployment would happen here"
+          echo "This step requires the Wago API token to be configured"
+          # Add actual Wago deployment logic here when API token is available
