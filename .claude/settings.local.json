@@ -6,7 +6,12 @@
       "Bash(git push:*)",
       "Bash(git tag:*)",
       "Bash(gh release create:*)",
-      "Bash(mkdir:*)"
+      "Bash(mkdir:*)",
+      "Bash(gh secret:*)",
+      "Bash(gh release list:*)",
+      "Bash(gh run list:*)",
+      "Bash(gh run view:*)",
+      "Bash(gh workflow run:*)"
     ],
     "deny": []
   }

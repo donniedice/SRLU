@@ -34,7 +34,7 @@ jobs:
             echo "version=${{ github.event.inputs.version }}" >> $GITHUB_OUTPUT
             echo "body=Manual deployment triggered" >> $GITHUB_OUTPUT
             echo "url=${{ github.server_url }}/${{ github.repository }}" >> $GITHUB_OUTPUT
-            echo "name=SRLU ${{ github.event.inputs.version }}" >> $GITHUB_OUTPUT
+            echo "name=SimpleQuestPlates ${{ github.event.inputs.version }}" >> $GITHUB_OUTPUT
           fi
       
       - name: Send Discord notification
@@ -46,20 +46,20 @@ jobs:
                -X POST \
                -d "{
                  \"content\": \"\",
-                 \"username\": \"SRLU Update\",
-                 \"avatar_url\": \"https://raw.githubusercontent.com/donniedice/SRLU/main/images/SRLU_logo_400x400.png\",
+                 \"username\": \"SQP Update\",
+                 \"avatar_url\": \"https://raw.githubusercontent.com/donniedice/SimpleQuestPlates/main/images/SQP_logo_400x400.png\",
                  \"embeds\": [{
-                   \"title\": \"🗡️ SRLU | Skyrim Level-Up! - ${{ steps.release_info.outputs.version }}\",
-                   \"description\": \"**Fus Ro DAH!** - A new version of SRLU has been released!\\n\\n🎵 **What's New:**\\n• Documentation overhaul with RGX Mods Brand Standards\\n• Discord webhook notifications\\n• Complete CurseForge description\\n• Updated README with proper formatting\\n\\n**Transform your WoW leveling experience with the iconic Skyrim level-up sound!**\",
+                   \"title\": \"🎯 SimpleQuestPlates - ${{ steps.release_info.outputs.version }}\",
+                   \"description\": \"**Clean. Simple. Effective.** - A new version of SimpleQuestPlates has been released!\\n\\n✨ **What's New:**\\n• Check the release notes for full details\\n• Bug fixes and performance improvements\\n\\n**The minimalist nameplate addon that keeps your UI clean and your focus sharp!**\",
                    \"url\": \"${{ steps.release_info.outputs.url }}\",
-                   \"color\": 9132843,
+                   \"color\": 5168588,
                    \"thumbnail\": {
-                     \"url\": \"https://raw.githubusercontent.com/donniedice/SRLU/main/images/SRLU_logo_400x400.png\"
+                     \"url\": \"https://raw.githubusercontent.com/donniedice/SimpleQuestPlates/main/images/SQP_logo_400x400.png\"
                    },
                    \"fields\": [
                      {
                        \"name\": \"📥 Downloads\",
-                       \"value\": \"[CurseForge](https://www.curseforge.com/wow/addons/srlu)\\n[Wago.io](https://addons.wago.io/addons/srlu)\\n[GitHub](https://github.com/donniedice/SRLU)\",
+                       \"value\": \"[CurseForge](https://www.curseforge.com/wow/addons/simplequestplates)\\n[Wago.io](https://addons.wago.io/addons/simplequestplates)\\n[GitHub](https://github.com/donniedice/SimpleQuestPlates)\",
                        \"inline\": true
                      },
                      {
@@ -69,7 +69,7 @@ jobs:
                      },
                      {
                        \"name\": \"💬 Support\",
-                       \"value\": \"[Join Discord](https://discord.gg/N7kdKAHVVF)\\n[Report Issues](https://github.com/donniedice/SRLU/issues)\",
+                       \"value\": \"[Join Discord](https://discord.gg/N7kdKAHVVF)\\n[Report Issues](https://github.com/donniedice/SimpleQuestPlates/issues)\",
                        \"inline\": true
                      }
                    ],
