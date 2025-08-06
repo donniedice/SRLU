@@ -41,36 +41,40 @@ jobs:
         env:
           DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
         run: |
-          # Create simple Discord message
+          # Create RGX Mods standard Discord message
           curl -H "Content-Type: application/json" \
                -X POST \
                -d "{
-                 \"username\": \"SRLU Bot\",
-                 \"avatar_url\": \"https://raw.githubusercontent.com/donniedice/SRLU/main/images/SRLU_logo_400x400.png\",
+                 \"content\": \"@everyone\",
+                 \"username\": \"RGX Mods Update\",
+                 \"avatar_url\": \"https://raw.githubusercontent.com/donniedice/SimpleQuestPlates/main/images/kiwi.gif\",
                  \"embeds\": [{
-                   \"title\": \"🎮 ${{ steps.release_info.outputs.name }}\",
-                   \"description\": \"A new version of SRLU has been released!\",
+                   \"title\": \"🗡️ SRLU | Skyrim Level-Up! - ${{ steps.release_info.outputs.version }}\",
+                   \"description\": \"**Fus Ro DAH!** - A new version of SRLU has been released!\\n\\n🎵 **What's New:**\\n• Documentation overhaul with RGX Mods Brand Standards\\n• Discord webhook notifications\\n• Complete CurseForge description\\n• Updated README with proper formatting\\n\\n**Transform your WoW leveling experience with the iconic Skyrim level-up sound!**\",
                    \"url\": \"${{ steps.release_info.outputs.url }}\",
                    \"color\": 9132843,
+                   \"thumbnail\": {
+                     \"url\": \"https://raw.githubusercontent.com/donniedice/SRLU/main/images/SRLU_logo_400x400.png\"
+                   },
                    \"fields\": [
                      {
-                       \"name\": \"Version\",
-                       \"value\": \"\`${{ steps.release_info.outputs.version }}\`\",
+                       \"name\": \"📥 Downloads\",
+                       \"value\": \"[CurseForge](https://www.curseforge.com/wow/addons/srlu)\\n[Wago.io](https://addons.wago.io/addons/srlu)\\n[GitHub](https://github.com/donniedice/SRLU)\",
                        \"inline\": true
                      },
                      {
-                       \"name\": \"Repository\",
-                       \"value\": \"[GitHub](${{ github.server_url }}/${{ github.repository }})\",
+                       \"name\": \"🎮 Compatibility\",
+                       \"value\": \"✅ The War Within\\n✅ Classic Era\\n✅ Cataclysm\\n✅ MoP\",
                        \"inline\": true
                      },
                      {
-                       \"name\": \"Downloads\",
-                       \"value\": \"[CurseForge](https://www.curseforge.com/wow/addons/srlu) | [Wago](https://addons.wago.io/addons/srlu)\",
-                       \"inline\": false
+                       \"name\": \"💬 Support\",
+                       \"value\": \"[Join Discord](https://discord.gg/N7kdKAHVVF)\\n[Report Issues](https://github.com/donniedice/SRLU/issues)\",
+                       \"inline\": true
                      }
                    ],
                    \"footer\": {
-                     \"text\": \"RGX Mods - Skyrim Level-Up!\",
+                     \"text\": \"RGX Mods - RealmGX Community\",
                      \"icon_url\": \"https://raw.githubusercontent.com/donniedice/SimpleQuestPlates/main/images/kiwi.gif\"
                    },
                    \"timestamp\": \"$(date -u +%Y-%m-%dT%H:%M:%S.000Z)\"
