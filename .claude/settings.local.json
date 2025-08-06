@@ -34,7 +34,12 @@
       "Bash(git -C ../FFLU push origin v2.2.0)",
       "Bash(gh api:*)",
       "WebFetch(domain:raw.githubusercontent.com)",
-      "Bash(sed:*)"
+      "Bash(sed:*)",
+      "Bash(git -C ../SimpleQuestPlates add .)",
+      "Bash(git -C ../SimpleQuestPlates commit -m \"fix: Update CurseForge URL to correct link\n\n- Changed from /simplequestplates to /sqp-simplequestplates\")",
+      "Bash(git -C ../SimpleQuestPlates pull origin main)",
+      "WebFetch(domain:discord.gg)",
+      "WebFetch(domain:discord.com)"
     ],
     "deny": []
   }

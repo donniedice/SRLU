@@ -7,7 +7,7 @@
 [![GitHub release](https://img.shields.io/github/v/release/donniedice/SRLU?style=for-the-badge&color=success)](https://github.com/donniedice/SRLU/releases)
 [![GitHub stars](https://img.shields.io/github/stars/donniedice/SRLU?style=for-the-badge&color=yellow)](https://github.com/donniedice/SRLU/stargazers)
 [![GitHub issues](https://img.shields.io/github/issues/donniedice/SRLU?style=for-the-badge&color=red)](https://github.com/donniedice/SRLU/issues)
-[![Discord](https://img.shields.io/badge/Discord-Join%20Us-7289da?style=for-the-badge&logo=discord)](https://discord.gg/N7kdKAHVVF)
+[![Discord](https://img.shields.io/badge/Discord-Join%20Us-7289da?style=for-the-badge&logo=discord)](https://discord.gg/hK9N3esnce)
 
 [![GitHub last commit](https://img.shields.io/github/last-commit/donniedice/SRLU?style=flat-square)](https://github.com/donniedice/SRLU/commits/main)
 [![GitHub repo size](https://img.shields.io/github/repo-size/donniedice/SRLU?style=flat-square)](https://github.com/donniedice/SRLU)

@@ -62,7 +62,7 @@ local L = {
     
     -- RGX Mods Branding
     ["RGX_MODS_PREFIX"] = "|cffa0a0a0RGX Mods|r",
-    ["COMMUNITY_MESSAGE"] = "Part of the RealmGX Community - join us at discord.gg/N7kdKAHVVF"
+    ["COMMUNITY_MESSAGE"] = "Part of the RealmGX Community - join us at discord.gg/hK9N3esnce"
 }
 
 -- Russian localization by ZamestoTV (Hubbotu)
@@ -104,7 +104,7 @@ if locale == "ruRU" then
     L["SOUND_MEDIUM"] = "Средний"
     L["SOUND_LOW"] = "Низкий"
     
-    L["COMMUNITY_MESSAGE"] = "Часть сообщества RealmGX - присоединяйтесь к нам на discord.gg/N7kdKAHVVF"
+    L["COMMUNITY_MESSAGE"] = "Часть сообщества RealmGX - присоединяйтесь к нам на discord.gg/hK9N3esnce"
 
 -- German localization
 elseif locale == "deDE" then
@@ -145,7 +145,7 @@ elseif locale == "deDE" then
     L["SOUND_MEDIUM"] = "Mittel"
     L["SOUND_LOW"] = "Niedrig"
     
-    L["COMMUNITY_MESSAGE"] = "Teil der RealmGX Community - tritt uns bei: discord.gg/N7kdKAHVVF"
+    L["COMMUNITY_MESSAGE"] = "Teil der RealmGX Community - tritt uns bei: discord.gg/hK9N3esnce"
 
 -- French localization
 elseif locale == "frFR" then
@@ -186,7 +186,7 @@ elseif locale == "frFR" then
     L["SOUND_MEDIUM"] = "Moyen"
     L["SOUND_LOW"] = "Bas"
     
-    L["COMMUNITY_MESSAGE"] = "Partie de la communauté RealmGX - rejoignez-nous sur discord.gg/N7kdKAHVVF"
+    L["COMMUNITY_MESSAGE"] = "Partie de la communauté RealmGX - rejoignez-nous sur discord.gg/hK9N3esnce"
 
 -- Spanish localization
 elseif locale == "esES" or locale == "esMX" then
@@ -227,7 +227,7 @@ elseif locale == "esES" or locale == "esMX" then
     L["SOUND_MEDIUM"] = "Medio"
     L["SOUND_LOW"] = "Bajo"
     
-    L["COMMUNITY_MESSAGE"] = "Parte de la comunidad RealmGX - únete a nosotros en discord.gg/N7kdKAHVVF"
+    L["COMMUNITY_MESSAGE"] = "Parte de la comunidad RealmGX - únete a nosotros en discord.gg/hK9N3esnce"
 end
 
 -- Assign localization table to global addon namespace

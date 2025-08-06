@@ -4,7 +4,7 @@
 
 **<span style="color:#8B4513">"Fus Ro DAH!"</span> <span style="color:#e67e23">- Now in</span> <span style="color:#06c">World of Warcraft</span><span style="color:#e67e23">!</span>**
 
-[![CurseForge Downloads](https://img.shields.io/badge/CurseForge-Downloads-orange?style=for-the-badge)](https://www.curseforge.com/wow/addons/srlu) [![GitHub Stars](https://img.shields.io/github/stars/donniedice/SRLU?style=for-the-badge&color=yellow)](https://github.com/donniedice/SRLU) [![Discord Community](https://img.shields.io/badge/Join%20Our%20Discord-RealmGX%20Community-7289da?style=for-the-badge&logo=discord)](https://discord.gg/N7kdKAHVVF)
+[![CurseForge Downloads](https://img.shields.io/badge/CurseForge-Downloads-orange?style=for-the-badge)](https://www.curseforge.com/wow/addons/srlu) [![GitHub Stars](https://img.shields.io/github/stars/donniedice/SRLU?style=for-the-badge&color=yellow)](https://github.com/donniedice/SRLU) [![Discord Community](https://img.shields.io/badge/Join%20Our%20Discord-RealmGX%20Community-7289da?style=for-the-badge&logo=discord)](https://discord.gg/hK9N3esnce)
 
 ---
 
@@ -109,7 +109,7 @@
 
 ### <span style="color:#b96ad9">💬</span> [<span style="color:#8B1538">R</span><span style="color:#7598b6">ealm</span><span style="color:#8B1538">G</span><span style="color:#8B1538">X</span>](https://realmgx.com) <span style="color:#8B4513">Discord</span> <span style="color:#3598db">-</span> <span style="color:#2dc26b">Your Gaming Home!</span>
 
-[![Join Discord](https://img.shields.io/badge/Join%20Our%20Discord-RealmGX%20Community-7289da?style=for-the-badge&logo=discord&logoColor=white&labelColor=5865F2)](https://discord.gg/N7kdKAHVVF)
+[![Join Discord](https://img.shields.io/badge/Join%20Our%20Discord-RealmGX%20Community-7289da?style=for-the-badge&logo=discord&logoColor=white&labelColor=5865F2)](https://discord.gg/hK9N3esnce)
 
 **<span style="color:#8B4513">🎮</span> [<span style="color:#8B1538">R</span><span style="color:#7598b6">ealm</span> <span style="color:#8B1538">G</span><span style="color:#7598b6">amers e</span><span style="color:#8B1538">X</span><span style="color:#7598b6">treme</span>](https://realmgx.com) <span style="color:#3598db">-</span> <span style="color:#4ecdc4">Where</span> <span style="color:#06c">WoW</span> <span style="color:#4ecdc4">Enthusiasts Unite!</span>**
 
@@ -158,6 +158,6 @@ _<span style="color:#e67e23">"May your levels be swift and your fanfares be lege
 
 ---
 
-[<span style="color:#8B4513">🎮 Join our</span> <span style="color:#7289da">Discord</span> <span style="color:#8B4513">Community</span>](https://discord.gg/N7kdKAHVVF) <span style="color:#3598db">|</span> [<span style="color:#2dc26b">⭐ Star us on</span> <span style="color:#24292e">GitHub</span>](https://github.com/donniedice/SRLU) <span style="color:#3598db">|</span> [<span style="color:#8B4513">☕ Support Development</span>](https://www.buymeacoffee.com/donniedice)
+[<span style="color:#8B4513">🎮 Join our</span> <span style="color:#7289da">Discord</span> <span style="color:#8B4513">Community</span>](https://discord.gg/hK9N3esnce) <span style="color:#3598db">|</span> [<span style="color:#2dc26b">⭐ Star us on</span> <span style="color:#24292e">GitHub</span>](https://github.com/donniedice/SRLU) <span style="color:#3598db">|</span> [<span style="color:#8B4513">☕ Support Development</span>](https://www.buymeacoffee.com/donniedice)
 
 **<span style="color:#8B4513">🎮</span> <span style="color:#8B1538">R</span><span style="color:#8B1538">G</span><span style="color:#8B1538">X</span> <span style="color:#4ecdc4">Mods</span> <span style="color:#3598db">-</span> <span style="color:#e67e23">Powered by</span> [<span style="color:#8B1538">R</span><span style="color:#7598b6">ealm</span><span style="color:#8B1538">G</span><span style="color:#8B1538">X</span>](https://realmgx.com) <span style="color:#e67e23">Community</span>**

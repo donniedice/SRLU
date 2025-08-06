@@ -92,7 +92,7 @@ jobs:
                      },
                      {
                        \"name\": \"💬 Support\",
-                       \"value\": \"[Join Discord](https://discord.gg/N7kdKAHVVF)\\n[Report Issues](https://github.com/donniedice/[ADDON_SHORT]/issues)\",
+                       \"value\": \"[Join Discord](https://discord.gg/hK9N3esnce)\\n[Report Issues](https://github.com/donniedice/[ADDON_SHORT]/issues)\",
                        \"inline\": true
                      }
                    ],
